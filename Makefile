@@ -55,106 +55,11 @@ jshint:
 min: nomin
 #lib/odsaUtils-min.js lib/site-min.css lib/odsaAV-min.js lib/odsaAV-min.css lib/khan-exercise-min.js lib/odsaMOD-min.js lib/odsaMOD-min.css lib/gradebook-min.js lib/gradebook-min.css lib/registerbook-min.js
 
-good: min
-	python $(CONFIG_SCRIPT) config/good.json
-
-RecurTutor: min
-	python $(CONFIG_SCRIPT) config/RecurTutor.json
-
-CSCI102: min
-	python $(CONFIG_SCRIPT) config/CSCI102.json
-
-CS150: min
-	python $(CONFIG_SCRIPT) config/CS150.json
-
-CSCI204: min
-	python $(CONFIG_SCRIPT) config/CSCI204.json
-
-CS208: min
-	python $(CONFIG_SCRIPT) config/CS208.json
-
-CS223: min
-	python $(CONFIG_SCRIPT) config/CS223.json
-
-CSE-A1140: min
-	python $(CONFIG_SCRIPT) config/CSE-A1140.json
-
-CSE-A1141: min
-	python $(CONFIG_SCRIPT) config/CSE-A1141.json
-
-CSE-A1141eng: min
-	python $(CONFIG_SCRIPT) config/CSE-A1141eng.json
-
-CS2114: min
-	python $(CONFIG_SCRIPT) config/CS2114.json
-
-CS2401: min
-	python $(CONFIG_SCRIPT) config/CS2401.json
-
-CS3114: min
-	python $(CONFIG_SCRIPT) config/CS3114.json
-
-CS3114AM: min
-	python $(CONFIG_SCRIPT) config/CS3114AM.json
-
-CS3114PM: min
-	python $(CONFIG_SCRIPT) config/CS3114PM.json
-
-CS3114notes: min
-	python $(CONFIG_SCRIPT) s config/CS3114notes.json
-
-COP3530: min
-	python $(CONFIG_SCRIPT) config/COP3530.json
-
-CS5114: min
-	python $(CONFIG_SCRIPT) config/CS5114.json
-
 OpenDSA: min
 	python $(CONFIG_SCRIPT) config/OpenDSA.json
 
-IS: min
-	python $(CONFIG_SCRIPT) config/IS.json
-
-NP: min
-	python $(CONFIG_SCRIPT) config/NP.json
-
-test: min
-	python $(CONFIG_SCRIPT) config/test.json
-
-testcmap: min
-	python $(CONFIG_SCRIPT) config/testcmap.json
-
-testanal: min
-	python $(CONFIG_SCRIPT) config/testanal.json	
-
-testfi: min
-	python $(CONFIG_SCRIPT) config/testfi.json
-
-testsv: min
-	python $(CONFIG_SCRIPT) config/testsv.json
-
-testcpp: min
-	python $(CONFIG_SCRIPT) config/testcpp.json
-
-uwosh: min
-	python $(CONFIG_SCRIPT) config/uwosh.json
-
-List: min
-	python $(CONFIG_SCRIPT) s config/List.json
-
-Dev: min
-	python $(CONFIG_SCRIPT) config/Dev.json
-
-Everything: min
-	python $(CONFIG_SCRIPT) config/Everything.json
-
-invalid: min
-	python $(CONFIG_SCRIPT) config/invalid.json
-
-slides: min
-	python $(CONFIG_SCRIPT) -s config/slides.json
-
-allBooks: CS208 CS2114 CS2401 CS3114 CS3530 OpenDSA Everything testcmap
+CompThink: min
+	python $(CONFIG_SCRIPT) config/CompThinkjson
 
 nomin:
 	@cp JSAV/build/JSAV.js JSAV/build/JSAV-min.js
