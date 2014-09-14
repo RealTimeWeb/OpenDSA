@@ -9,6 +9,8 @@
    :topic:
 
 
+.. TODO How to Show Images?
+
 Python Syntax
 =============
 
