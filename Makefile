@@ -59,7 +59,7 @@ OpenDSA: min
 	python $(CONFIG_SCRIPT) config/OpenDSA.json
 
 CompThink: min
-	python $(CONFIG_SCRIPT) config/CompThinkjson
+	python $(CONFIG_SCRIPT) config/CompThink.json
 
 nomin:
 	@cp JSAV/build/JSAV.js JSAV/build/JSAV-min.js
