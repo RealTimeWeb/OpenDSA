@@ -22,34 +22,83 @@
     },
     "chapters": {
         "Preface": {
-            "Intro": {
+            "Intro.rst": {
                 "long_name": "How to Use this System",
                 "exercises": {}
             }
         },
         "Introduction": {
-            "Background/IntroDSA.rst": {
-                "long_name": "Introduction to Data Structures and Algorithms",
-                "exercises": {
-                    "IntroSumm": {
-                        "long_name": "Introduction Summary Questions",
-                        "required": true,
-                        "points": 1,
-                        "threshold": 5
-                    }
-                }
+            "Introduction/Welcome.rst": {
+                "long_name": "Introduction to CompThink",
+                "exercises": {}
+            },
+            "Introduction/Syllabus.rst": {
+                "long_name": "Syllabus",
+                "exercises": {}
+            },
+            "Introduction/Themes.rst": {
+                "long_name": "Themes",
+                "exercises": {}
+            }
+        },
+        "Modelling": {
+            "Modelling/Modeling-Intro.rst": {
+                "long_name": "Introduction to CompThink",
+                "exercises": {}
+            },
+            "Modelling/NetLogo.rst": {
+                "long_name": "NetLogo",
+                "exercises": {}
+            },
+            "Modelling/Abstraction.rst": {
+                "long_name": "Abstraction",
+                "exercises": {}
+            },
+            "Modelling/Story-Of-Self.rst": {
+                "long_name": "A",
+                "exercises": {}
+            },
+            "Modelling/Coding-An-Abstraction.rst": {
+                "long_name": "A",
+                "exercises": {}
+            },
+            "Modelling/Manipulating-Abstractions.rst": {
+                "long_name": "A",
+                "exercises": {}
+            },
+            "Modelling/Functions.rst": {
+                "long_name": "A",
+                "exercises": {}
+            }
+        },
+        "Algorithms": {
+            "Algorithms/Algorithms-Intro.rst": {
+                "long_name": "Introduction to CompThink",
+                "exercises": {}
+            },
+            "Algorithms/Blockly-Intro.rst": {
+                "long_name": "NetLogo",
+                "exercises": {}
+            },
+            "Algorithms/Blockly-Big-Data.rst": {
+                "long_name": "Abstraction",
+                "exercises": {}
+            },
+            "Algorithms/Blockly-Functions.rst": {
+                "long_name": "A",
+                "exercises": {}
             }
         },
         "Big Data": {
-            "BigData/getting-started": {
-                "long_name": "Introduction and Terminology",
-                "exercises": {}
-            },
-            "BigData/introduction": {
+            "BigData/Big-Data-Intro.rst": {
                 "long_name": "Graph Implementation",
                 "exercises": {}
             },
-            "BigData/python-syntax": {
+            "BigData/Getting-Started.rst": {
+                "long_name": "Introduction and Terminology",
+                "exercises": {}
+            },
+            "BigData/Python-Syntax.rst": {
                 "long_name": "Graph Traversal",
                 "exercises": {
                     "graphDFS": {
@@ -80,7 +129,7 @@
                     }
                 }
             },
-            "BigData/python-viz": {
+            "BigData/Python-Viz.rst": {
                 "long_name": "Topological Sort",
                 "exercises": {
                     "topsortCON1": {},
@@ -101,12 +150,18 @@
                 }
             }
         },
+        "Conclusion": {
+            "Conclusion/Summary.rst": {
+                "long_name": "Graph Implementation",
+                "exercises": {}
+            }
+        },
         "Appendix": {
-            "Glossary": {
+            "Glossary.rst": {
                 "long_name": "Glossary",
                 "exercises": {}
             },
-            "Bibliography": {
+            "Bibliography.rst": {
                 "long_name": "Bibliography",
                 "exercises": {}
             }

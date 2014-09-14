@@ -1,22 +1,32 @@
+.. This file is part of the OpenDSA eTextbook project. See
+.. http://algoviz.org/OpenDSA for more details.
+.. Copyright (c) 2012-2013 by the OpenDSA Project Contributors, and
+.. distributed under an MIT open source license.
+
+.. avmetadata::
+   :author: OpenDSA & CompThink Contributors
+   :satisfies:
+   :topic:
+
+
 Visualization
 =============
 
-
 A significant challenge in working with any kind of data is how to present this data to answer questions of interest to  human observers. This challenge is especially critical for big data streams because of the volume, variety, or velocity of the data involved. Data of large volume has the potential to overwhelm an observers ability to extract meaning from the data. How should the voting data for every US citizen be portrayed to be of interest to political scientists? How should all of the genome data for a species be represented to answer interesting biological questions? How can all of the works of romantic poets be presented for literary analysis? Data of highly diverse variety is a challenge because the data forms of data might best be conveyed by different means. Integrating different representations in a meaningful way is difficult. For example health-related information contains family history, genomic data, medical test results, descriptions of exercise patterns, records of diet and nutrition, list of stress factors. How can all of this health-related information even for a single individual be displayed for best use by doctors?  Data with high velocity is changing so rapidly that interesting or significant aspects of the data might be lost. For example, how can stock market data be depicted so that meaningful trends can be seen by a stock analyst? How can data on the movement of vehicles in an urban road system be exhibited so that traffic engineers can determine better ways to avoid traffic jams?
 
-Data visualization is often a useful way to present complex data. The adage that "A picture is worth a thousand words" reflects the power of the human visual system. Presenting data in a visual form leverages the ability of our visual systems to help us see patterns or to detect special cases of interest that are distinctive in some way. finding a good visualization is, of course, not always easy. The picture game "Where's Waldo" shows how easy it is to create a visual representation that hides the feature of interest. 
+Data visualization is often a useful way to present complex data. The adage that "A picture is worth a thousand words" reflects the power of the human visual system. Presenting data in a visual form leverages the ability of our visual systems to help us see patterns or to detect special cases of interest that are distinctive in some way. finding a good visualization is, of course, not always easy. The picture game "Where's Waldo" shows how easy it is to create a visual representation that hides the feature of interest.
 
 There are a rich variety of ways to visualize data in both two and three dimensions. For example, here is a `gallery <http://matplotlib.org/gallery.html>`_ of  visualization that can be produced by the tools we will be using. Developing the knowledge and skills to build intricate and compelling visualizations is a study on its own. However, some basic forms of visualization are very useful for a number of "first step" explorations of big data. These basic forms are:
 
 * line graphs: showing how data changes over time (e.g. how the value of a stock changes over the trading days).
 * histograms: showing the distribution over a set of categories (e.g., how many earthquakes are there in a month in each of the six units on the Richter scale).
-* map plots: showing the distribution over geographic space (e.g., where on the globe have earthquakes in the last month occurred). 
+* map plots: showing the distribution over geographic space (e.g., where on the globe have earthquakes in the last month occurred).
 * 2D plots: showing the correlation between two different factors (e.g., what is the relationship between the location of an earthquake and its latitude? or longitude?)
 
-You can also think of visualizations that you see every day as other examples of how data is presented: weather maps, hurricane tracks, election maps. 
+You can also think of visualizations that you see every day as other examples of how data is presented: weather maps, hurricane tracks, election maps.
 
-We will be using *matplotlib* to illustrate visualization of data. Matplotlib is widely used and offers the capability to generate many different kinds of visualization in Python. We saw examples of its variety of visualization in the matplotlib gallery above. However, this utility comes at a price. Matplotlib is complicated. Fortunately, matplotlib is designed so that many *common cases* can be done with minimal or reasonable effort. In addition to matplotlib we will also look at a library for geographical plotting that is built on top of matplotlib. 
- 
+We will be using *matplotlib* to illustrate visualization of data. Matplotlib is widely used and offers the capability to generate many different kinds of visualization in Python. We saw examples of its variety of visualization in the matplotlib gallery above. However, this utility comes at a price. Matplotlib is complicated. Fortunately, matplotlib is designed so that many *common cases* can be done with minimal or reasonable effort. In addition to matplotlib we will also look at a library for geographical plotting that is built on top of matplotlib.
+
 
 Some Additional Python Features
 -------------------------------
@@ -31,57 +41,57 @@ Beyond their value in allowing us to use matplotlib, these additional features d
 
 Modules and Packages
 ^^^^^^^^^^^^^^^^^^^^
-A large software library, like matplotlib, may have dozens or hundreds of functions that it makes available for reuse in building applications. In many applications only some of these functions are needed. To make the distribution and reuse easier the functions are usually grouped together, each group consisting of functions that are more likely to be needed together. In Python these groups of functions are called *modules*. We have already seen some examples of using the *import* facility in Python to make the functions in a module available for (re)use. Several modules may themselves be further grouped together in a bigger collection. In Python this bigger collection is called a *package*. 
+A large software library, like matplotlib, may have dozens or hundreds of functions that it makes available for reuse in building applications. In many applications only some of these functions are needed. To make the distribution and reuse easier the functions are usually grouped together, each group consisting of functions that are more likely to be needed together. In Python these groups of functions are called *modules*. We have already seen some examples of using the *import* facility in Python to make the functions in a module available for (re)use. Several modules may themselves be further grouped together in a bigger collection. In Python this bigger collection is called a *package*.
 
-Matplotlib is a package containing a number of modules. One such module is the *pyplot* module. The *pyplot* module has many functions related to constructing 2D graphs and charts. Some of the functions in the *pyplot* module are the *plot*, *show*, *title*, *xlabel*, and *ylabel*  functions. We will see these functions used later. 
+Matplotlib is a package containing a number of modules. One such module is the *pyplot* module. The *pyplot* module has many functions related to constructing 2D graphs and charts. Some of the functions in the *pyplot* module are the *plot*, *show*, *title*, *xlabel*, and *ylabel*  functions. We will see these functions used later.
 
 The scheme used in Python to name a function in a package or module is called a "dotted notation". In this notation, the full name for the plot function is:
 
 ..  code::
 
     matplotlib.pyplot.show
-    
+
 However, Python provides a way to introduce a "nickname" for a module. This form of import is useful if there are several functions in a model that will be used. The nickname is given in the *import* statement as shown in this example:
 
 ..  code::
 
     import matplotlib.pyplot as plt
-    
+
     # use the functions as
-    
+
     plt.plot(...)    # plot some data
     plt.title(...)   # add a title
     plot.show(...)   # show the data in a window
 
-where *plt* is the "nickname" defined in this program for the matplotlib.pyplot module. 
+where *plt* is the "nickname" defined in this program for the matplotlib.pyplot module.
 
-If only a single (or a few) function(s) from a module are to be used then only that (those) function(s) can be imported. For example, we will see a package named *mpl_toolkits* that contains code for generating geographic plots. This package has a module named *basemap*, one of whose functions is named *Basemap* (note the difference in capitalization between the module name and the function name). In the code example to be seen, only the *Basemap* function is needed. 
+If only a single (or a few) function(s) from a module are to be used then only that (those) function(s) can be imported. For example, we will see a package named *mpl_toolkits* that contains code for generating geographic plots. This package has a module named *basemap*, one of whose functions is named *Basemap* (note the difference in capitalization between the module name and the function name). In the code example to be seen, only the *Basemap* function is needed.
 
 ..  code::
 
     from mpl_toolkits.basemap import Basemap
-    
+
     # use the Basemap function as
-    
+
     map = Basemap(...)   #generate a geographic map to plot data on
 
-    
-It is important to remember that the *from...import...* only provides access to the *Basemap* function and not any other functions in the *mpl_toolkits.basemap* module.    
-    
+
+It is important to remember that the *from...import...* only provides access to the *Basemap* function and not any other functions in the *mpl_toolkits.basemap* module.
+
 
 More About Functions
 ^^^^^^^^^^^^^^^^^^^^
 
-It is often the case that functions designed for general purpose use have many parameters. For example, the *matplotlib.pyplot.scatter* function for generating scatter plots has 14 parameters. This large number of parameters gives the programmer more control over the appearance of the scatter plot (e.g., the color of the plotted data  points, the symbol used to denote a plotted data point, the width of the line connecting points if a line is used, etc.). 
+It is often the case that functions designed for general purpose use have many parameters. For example, the *matplotlib.pyplot.scatter* function for generating scatter plots has 14 parameters. This large number of parameters gives the programmer more control over the appearance of the scatter plot (e.g., the color of the plotted data  points, the symbol used to denote a plotted data point, the width of the line connecting points if a line is used, etc.).
 
 In common cases many of the parameters for a general purpose function give more control than is desired. To ease the programmer's task Python allows the definer of a function to specify *default values* for parameters.  Here is the definition of the *matplotlib.pyplot.scatter* function showing its use of default values:
 
 ..  code::
 
      matplotlib.pyplot.scatter(x, y, s=20, c='b', marker='o', cmap=None, norm=None, vmin=None, vmax=None, alpha=None, linewidths=None, verts=None, hold=None, **kwargs)
-     
 
- 
+
+
 In this example, the parameters *x* and *y* have no default values; they are required. The other parameters have default values are optional. The parameter *s* is defined so that if no no value is specified for this parameter then the function will use the default value *20*. Similarly, if no value is provided for the *marker* parameter then the function will use the default value of *'o'*. The value of *None* means that if no value is given for this parameter on the function call then the function will ignore those parts of its functionality that depend on having a value for this parameter. For example, the parameter *linewidths=None* means that if no linewidth is specified then the scatter plot will not connect the data points by a line (because connecting them a line would require having been told what line width to use).
 
 Calling a function that has default parameters means that the function call only need mention those parameters whose default values we want to override. Of course, all required parameters (those without default values) must be given. When overriding a default value the syntax *pname=pthis" is used to specify that the parameter whose name is *pname* should have the value *pthis*. Here are some examples of calling the *scatter* function.
@@ -89,12 +99,12 @@ Calling a function that has default parameters means that the function call only
 ..  code::
 
     import matplotlib.pyplot as plt
-    
+
     # define the data for the scatter plot
-    
+
     lat  = [ ... ]     # data for the x values
     long = [ ... ]     # data for the y values
-    
+
     plt.scatter(lat, long)                    # Call 1
     plt.scatter(lat, long, marker='+')        # Call 2
     plt.scatter(lat, long, c='r')             # Call 3
@@ -120,18 +130,18 @@ A second aspect of functions that is sometimes used in general purpose functions
       celsius = (temp - 32)/1.8
       kelvin  = ((temp + 459.67)*5) / 9
       return celsius, kelvin
-      
+
    Ftemp = 76   # a Fahrenheit temperature
-   
+
    Ctemp , Ktemp = convert(Ftemp)
-   
+
 Notice in this example that the return statement contains two values to return the first of which is the Celsius conversion and the second of which is the Kelvin conversion.  Notice also that the use of the *convert* function has two properties on the left side that are both updated as a result of the function call.
-  
+
 
 Matplotlib Examples
 -------------------
 
-Some basic *matplotlib* visualizations will be developed. These examples are meant to give a "flavor" of how *matplotlib works. For your project you will undoubtedly need to explore other aspects of *matplotlib*. 
+Some basic *matplotlib* visualizations will be developed. These examples are meant to give a "flavor" of how *matplotlib works. For your project you will undoubtedly need to explore other aspects of *matplotlib*.
 
 These examples use data collected from the data stream of worldwide earthquake events provided by the US Geological Survey. A months worth of reports were sampled to produce a small set to be used for demonstration purposes. The data set contains information on 140 earthquakes. For each earthquake the data stream was reduced to only three items:
 
@@ -148,18 +158,18 @@ The sampled data set looks like this:
                     1.98, 1.8, 1.8, 1.7, 3.1, 2.0, 1.8, 0.6, 2.8, 0.5,
                     2.51, 3.51, 1.4, 2.6, 2.5, 2.4, 2.9, 2.6, 2.8, 2.5,
 					... ]
-					
+
     latitudes = [
                   39.6835 ,  60.5828 ,  47.4227 ,  38.8175 ,  19.1345 ,
                   19.4377 ,  60.0217 ,  38.7978 ,  19.1364 ,  38.8148 ,
 				  ... ]
-				  
+
     longitudes = [
                   -119.8202 ,  -151.0144 ,  -120.1962 ,  -122.8042 ,  -66.4852 ,
-                  -155.2545 ,  -152.0147 ,  -122.741 ,  -66.476 ,  -122.8202 ,	
-                  ... ]		
-				  
-The lists are organized so that a given earthquake is described by the triple (magnitudes[i], latitudes[i], longitudes[i]). For example, a 1.98 magnitude earth quake occurred at latitude 39.6835 and longitude -119.8202 and a magnitude 3.1 earthquake occurred at latitude 19.1345 and longitude -66.4852. 
+                  -155.2545 ,  -152.0147 ,  -122.741 ,  -66.476 ,  -122.8202 ,
+                  ... ]
+
+The lists are organized so that a given earthquake is described by the triple (magnitudes[i], latitudes[i], longitudes[i]). For example, a 1.98 magnitude earth quake occurred at latitude 39.6835 and longitude -119.8202 and a magnitude 3.1 earthquake occurred at latitude 19.1345 and longitude -66.4852.
 
 The lists are also organized by time: the first earthquake in the list occurred most recently and the last earthquake in the list occurred the longest in the past.
 
@@ -169,7 +179,7 @@ The complete sampled data set is contained in the file that can be downloaded fo
 Line Graph
 ^^^^^^^^^^
 
-A common data exploration question is whether there is any relationship of the data with time. For earthquakes we might want to see if there is any pattern, for example, where the magnitudes of the earthquakes rises over time and then decreases. To answer this question a ling graph can be created where the horizontal axis (x-axis) is time and the vertical axis (y-axis) is the magnitude of the earthquake. A related question is how the data relates to the average value of the data. 
+A common data exploration question is whether there is any relationship of the data with time. For earthquakes we might want to see if there is any pattern, for example, where the magnitudes of the earthquakes rises over time and then decreases. To answer this question a ling graph can be created where the horizontal axis (x-axis) is time and the vertical axis (y-axis) is the magnitude of the earthquake. A related question is how the data relates to the average value of the data.
 
 The following code uses *matplotlib* to produce a line graph of the magnitudes of the earthquakes. For visibility successive data points are connected by a line. A line representing the average value of the magnitudes is also drawn.
 
@@ -182,9 +192,9 @@ The following code uses *matplotlib* to produce a line graph of the magnitudes o
 .. code::
 
    # Line Graph Example
-   
+
    import matplotlib.pyplot as plt
-   
+
    magnitudes = [
                  1.98, 1.8, 1.8, 1.7, 3.1, 2.0, 1.8, 0.6, 2.8, 0.5,
                  2.51, 3.51, 1.4, 2.6, 2.5, 2.4, 2.9, 2.6, 2.8, 2.5,
@@ -192,7 +202,7 @@ The following code uses *matplotlib* to produce a line graph of the magnitudes o
 
    # Compute average magnitude
    avMagnitude = sum(magnitudes)/len(magnitudes)
-    
+
    # Plot magnitudes as a line graph
    plt.plot(magnitudes)
 
@@ -211,18 +221,18 @@ The following code uses *matplotlib* to produce a line graph of the magnitudes o
    # Clear before the next graph
    plt.clf()
 
-In general, the *pyplot* functions are used to build up a visualization. The visualization is then displayed in a separate window. The Python program waits until this window is closed before proceeding so that a number of visualizations can be constructed and viewed in sequence. 
+In general, the *pyplot* functions are used to build up a visualization. The visualization is then displayed in a separate window. The Python program waits until this window is closed before proceeding so that a number of visualizations can be constructed and viewed in sequence.
 
 In the above code, the *import* statement is used to give a nickname for the *matplotlib.pyplot* module. The builtin *sum* and *len* functions are used to compute the average magnitude. The visualization is constructed by the following steps:
 
-* the *plot* function is used to produce a line plot using the list of magnitudes. 
-* the plot function is used again using a list with two data points defining the endpoints of a straight line at the average value on the y-axis. 
-* the *xlable* and *ylable* functions add explanatory text labels to each axis. 
-* the display as a whole is given a title. 
+* the *plot* function is used to produce a line plot using the list of magnitudes.
+* the plot function is used again using a list with two data points defining the endpoints of a straight line at the average value on the y-axis.
+* the *xlable* and *ylable* functions add explanatory text labels to each axis.
+* the display as a whole is given a title.
 
-After the visualization has been constructed it can be displayed in a separate window using the *show* function. The program pauses at this point until the separate visualization window is closed. Finally, the *clf* function clears the internal structures that *matplotlib* uses to represent the visualization. 
+After the visualization has been constructed it can be displayed in a separate window using the *show* function. The program pauses at this point until the separate visualization window is closed. Finally, the *clf* function clears the internal structures that *matplotlib* uses to represent the visualization.
 
-The visualization produced by the line graph code is shown below. 
+The visualization produced by the line graph code is shown below.
 
 .. figure:: Python-Viz-Line-Graph.png
    :align: center
@@ -239,8 +249,8 @@ This shows the value of even simple visualizations.
 
 The window displayed by *matplotlib* has a number of controls in the lower left-hand corner.  Holding the cursor over any of the controls gives a brief description of that control. For the simple visualization we will be using three control are useful. These are:
 
-* right-most control saves the visualization using any one of a variety of standard formats. 
-* the second control from the right is a zoom control. Pushing this control changes the cursor in the visualization window to a "+" symbol using which a rectangle can be selected. The display will zoom in on this region. 
+* right-most control saves the visualization using any one of a variety of standard formats.
+* the second control from the right is a zoom control. Pushing this control changes the cursor in the visualization window to a "+" symbol using which a rectangle can be selected. The display will zoom in on this region.
 * the third control from the right is a pan-zoom control. Pushing this control changes the cursor in the visualization window to a symbol with two crossed double arrow heads. With the left mouse button down the display can be moved around. With the right mouse button down the display can be compressed and stretch horizontally or vertically.
 * the left-most control returns the visualization to its original state.
 
@@ -257,12 +267,12 @@ The line chart shows that there is a significant variation in the magnitudes. Ho
 ..  code::
 
     # Histogram Example
-	
+
     import matplotlib.pyplot as plt
 
 
     # Sampled earthquake magnitudes from real data stream
- 
+
     magnitudes = [
           1.98, 1.8, 1.8, 1.7, 3.1, 2.0, 1.8, 0.6, 2.8, 0.5,
           2.51, 3.51, 1.4, 2.6, 2.5, 2.4, 2.9, 2.6, 2.8, 2.5,
@@ -303,22 +313,22 @@ We now know something about the nature of earthquake magnitudes. But we would al
 Exercise. Remove the bins argument and observe the difference. With no bins argument the histogram function decides on how many categories to use and what the boundaries of these categories are.
 
 Exercise. Read the documentation for *pyplot.hist*. Modify the histogram example program to form a cumulative distribution function.
-   
+
 Scatter Plot
 ^^^^^^^^^^^^
 
 A question for many data sets is whether two items are related to each other in some way, that is, are they correlated. In our case, we might be interested in knowing whether there is any relationship between the latitude and longitude of earthquakes. In other words, do earthquakes occur "all over the place" or are there certain locations that have a higher incidence of earthquakes.
 
-To examine questions of correlation between two sets of data a scatter plot can be used. One set of data is treated as coordinates on the  horizontal axis (x-axis) and the other set of data is treated as coordinates on the vertical axis (y-axis). A point is plotted in the scatter plot at (x[i], y[i]) where x[i] is an element of one data set and y[i] is the corresponding element of the other data set. 
+To examine questions of correlation between two sets of data a scatter plot can be used. One set of data is treated as coordinates on the  horizontal axis (x-axis) and the other set of data is treated as coordinates on the vertical axis (y-axis). A point is plotted in the scatter plot at (x[i], y[i]) where x[i] is an element of one data set and y[i] is the corresponding element of the other data set.
 
-A random arrangements of points on the scatter plot means that there is no correlation. Clusters of points or patterns in the arrangements of point are visual evidence of a possible correlation. Statistical methods must be used to determine whether the apparent correlation is significant more merely random chance. 
+A random arrangements of points on the scatter plot means that there is no correlation. Clusters of points or patterns in the arrangements of point are visual evidence of a possible correlation. Statistical methods must be used to determine whether the apparent correlation is significant more merely random chance.
 
 A scatter plot of the longitude and latitude of earthquakes is shown in the following code sample. The full code can be downloaded from here.
 
 .. code::
 
    # Scatter Plot
-   
+
    import matplotlib.pyplot as plt
 
 
@@ -351,11 +361,11 @@ A scatter plot of the longitude and latitude of earthquakes is shown in the foll
 
    # Clear before the next set of graphs
    plt.clf()
-   
 
-Most of the code in the scatter plot example should be familiar from the earlier examples. The new element is the use of the *pyplot.scatter* function to generate the scatter plot itself. The two required parameters are the two lists of data which are, in our case, the longitude and latitude of each earthquake. There are two optional parameters used. The parameter named *c* allows the caller to specify what color to use for the points that are plotted. A red color is represented by the letter *'r'*. The second optional parameter, named *marker* allows the caller to specify what symbol to use for a plotted point. In this case a *'+'* symbol is used. 
 
-The scatter plot visualization produced by the example program is shown below. It is clear from this visualization that there are definite clusters in the data. This means that the earthquakes described in our sample daa appear to have a tendency to occur in some places more than other.  
+Most of the code in the scatter plot example should be familiar from the earlier examples. The new element is the use of the *pyplot.scatter* function to generate the scatter plot itself. The two required parameters are the two lists of data which are, in our case, the longitude and latitude of each earthquake. There are two optional parameters used. The parameter named *c* allows the caller to specify what color to use for the points that are plotted. A red color is represented by the letter *'r'*. The second optional parameter, named *marker* allows the caller to specify what symbol to use for a plotted point. In this case a *'+'* symbol is used.
+
+The scatter plot visualization produced by the example program is shown below. It is clear from this visualization that there are definite clusters in the data. This means that the earthquakes described in our sample daa appear to have a tendency to occur in some places more than other.
 
 
 .. figure:: Python-Viz-Scatter-Plot.png
@@ -363,13 +373,13 @@ The scatter plot visualization produced by the example program is shown below. I
 
    The Scatter Plot Visualization
 
-If we use the pan-zoom controls on the *matplotlib* display window we can see how localized the clustering of earthquakes is. The following figure shows a close-up view of the cluster of earthquakes in the upper left hand corner. 
-  
+If we use the pan-zoom controls on the *matplotlib* display window we can see how localized the clustering of earthquakes is. The following figure shows a close-up view of the cluster of earthquakes in the upper left hand corner.
+
 .. figure:: Python-Viz-Scatter-Plot-Zoom.png
    :align: center
 
    Englarged view of a cluster in the scatter plot visualization
-  
+
 We can see in the enlarged view of the earthquake cluster that a sizeable number of earthquakes occur in the region between -160 and -140 degrees of longitude and between 60 and 65 degree of latitude. The other clusters of earthquakes could be explored in a similar way.
 
 This scatter plot does not tell us, however, what relationship there might be between these clusters and the magnitudes of the earthquakes. Do the clusters contain earthquakes that are frequent but have small magnitudes and the large magnitude earthquakes happen in other locations? or Do the larger magnitude earthquakes also occur in these clusters? Additional analysis of the data would be needed to answer this question.
@@ -388,14 +398,14 @@ Latitude and longitude coordinates identify a point on the spherical globe. Maki
 ..  figure:: Python-Viz-Hammer-Projection.jpg
    :align: center
 
-   The Hammer projection. 
+   The Hammer projection.
 
 The example code below does map projections using the *Basemap* function. This function is part of the *mpl_toolkits* package*. This package contains a number of modules the are built "on top of" *matplotlib* and extend the functionality of *matplotlib* in a variety of specific application areas. The *basemap* module contains the function *Basemap* (note the difference in capitalization between the module name and the function name). The *Basemap* function implements a variety of map projections, like the Hammer projection. The set of available projections is described in the `Basemap documentation <http://matplotlib.org/basemap/users/index.html>`_ .
 
 
 The key steps in generating a globe-based visualization of data are:
 
-1. use *Basemap* to define a map projection, 
+1. use *Basemap* to define a map projection,
 2. use the map projection to convert latitude and longitude coordinates into the corresponding coordinates in that map projection, and
 3. use the *matplotlib.scatter* function to plot the transformed coordinates on the map
 
@@ -425,7 +435,7 @@ These there steps are marked by comments in the code below. The complete code ca
                 ...]
 
    # Create world map with a Hammer (eliptical, equal-area) projection
-   # centered at 180 degrees longitude (i.e. longitude zero of the 
+   # centered at 180 degrees longitude (i.e. longitude zero of the
    # visualization is longitude 180 on the globe)
    map = Basemap(projection='hammer',lon_0=180)   # Step 1
 

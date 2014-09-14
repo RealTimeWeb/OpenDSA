@@ -29,3 +29,6 @@ lib/*-min.*
 
 # File used by webstorm to store project settings.
 .idea
+
+# Mac Indexing File
+.DS_Store
