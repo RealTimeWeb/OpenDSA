@@ -27,7 +27,7 @@ The `Python Software Foundation <https://www.python.org>`_ provides a freely ava
 
 Running the IDLE development environment produces the "Python Shell" window shown in the following figure. IDLE provides access to a great deal of information about Python. As shown in the figure, selecting the "Python Docs" entry in the "Help" menu brings up a window with links to extensive Python documentation. The most immediately useful documentation is the Python Tutorial. You can access this tutorial either under the "Tutorial" link in the main part of the documentation window or through "The Python Tutorial" folder in the menu on the left. You can use this tutorial to find details about language features that you already know (e.g., the syntax or meaning of a statement) as well discover new aspects of Python.
 
-.. figure:: Python-IDLE-Help-Screen.png
+.. figure:: /Images/Python-IDLE-Help-Screen.png
    :align:  center
 
    Starting the Python Development Environment
@@ -35,7 +35,7 @@ Running the IDLE development environment produces the "Python Shell" window show
 
 The "Python Shell" window is the interface for a Python *interpreter* that can directly execute Python code. The three characters ">>>" is the shell prompt indicating that the interpreter is ready to be given Python code. The following figure shows that a small three line program has been entered. This program converts the Fahrenheit temperature of 75 to its rounded equivalent in Centigrade. As each line of code is entered the interpreter reads the line and performs the actions indicated by the code. The first two lines of code are calculations that the interpreter performs without any feedback. Immediately after the *print* statement is entered the interpreter performs the *print* statement and displays the value of the converted temperature.
 
-.. figure:: Python-IDLE-Type-Code-Screen.png
+.. figure:: /Images/Python-IDLE-Type-Code-Screen.png
    :align:  center
 
    Directly Executing Code in the Shell
@@ -47,7 +47,7 @@ For practical programming the shell window is used to open an edit window by sel
 Notice that the edit window as the word "Untitled" in the window's name. This reflects the fact that the code entered in the window has not yet been saved to a file. To save the file use the *Save As ...* option in the File menu of the edit window. The *Save As* dialog will ask you to choose a name for the file. You will notice that the word "Untitled" will be changed to the name of the file you chose and its location in the file system. In this case the file was saved as "test.py". The ".py" suffix denotes a file containing Python code.
 
 
-.. figure:: Python-IDLE-Edit-Window.png
+.. figure:: /Images/Python-IDLE-Edit-Window.png
    :align:  center
 
    Creating Code in the Edit Window
@@ -58,7 +58,7 @@ It is important to recognize a significant difference between the shell window a
 The  Python interpreter and the Python code editor work together. Once you have edited and saved the Python code you can use the *Run Module* menu in the *Run* menu of the edit window to execute the code saved in the file that is shown in the edit window. This is shown in the following figure. If you forget to save the file before attempting to execute the code the editor window will prompt you to do so.
 
 
-.. figure:: Python-IDLE-Run-Module.png
+.. figure:: /Images/Python-IDLE-Run-Module.png
    :align:  center
 
    Executing Edited Code
@@ -75,14 +75,14 @@ The Blockly programs developed earlier used many of the common programming struc
 The following figure shows the example in the section *Functions with Parameters* when the "Show Python" button was pushed. Note: the code display has been slightly moved in the figure to allow both the Blockly version and the Python version to be seen side by side. In a similar way the Python code for any Blockly program can be viewed.
 
 
-..  figure:: Python-Blockly-To-Python.png
+..  figure:: /Images/Python-Blockly-To-Python.png
     :align:  center
 
     Translating Blockly to Python
 
 The Python code for a Blockly program can be copied and pasted into an IDLE editor window as shown in the following figure. AFter pasting the code the editor file was saved as *Blockly-Demo.py* and then executed. You can see the output in the shell window resulting from this execution. Verify that this is the same output as produced by the Blockly version.
 
- .. figure:: Python-Executing-Blockly-Code.png
+ .. figure:: /Images/Python-Executing-Blockly-Code.png
     :align:  center
 
     Executing the Python Code from the Blockly Version
@@ -104,8 +104,8 @@ Overall Structure
 
 The following figure shows the code for the example with three regions identified. We will return soon to examine the detailed syntax of the individual statements. For now we want to get a "big picture" view.
 
-.. figure:: Python-Anatomy-Program.png
-    :align:  center
+.. figure:: /Images/Python-Anatomy-Program.png
+   :align:  center
 
     Parts of a Python Program
 
@@ -125,8 +125,8 @@ Another general characteristic of Python programs the importance of how the line
 In the following figure the indentation of the example code has been increased slightly for illustration purposes. Two vertical lines, one red and one blue, are used in the figure to identify where indentation has been used. You can see that every line that is part of the body of the function definition is indented as least four spaces and every line that is part of the body of the iteration is indented at least four additional (a total of eight) spaces. It is common practice to use four additional spaces at each new level of indentation.
 
 
-.. figure:: Python-Anatomy-Indentation.png
-    :align:  center
+.. figure:: /Images/Python-Anatomy-Indentation.png
+   :align:  center
 
     Indenting Lines of Code
 
@@ -139,8 +139,8 @@ Comments
 Understanding what (especially complex) code does is difficult so documenting what the code is intended to do is a sign of good craftsmanship. Each programming language has some means of including *comments* in the program text. These comments provide a way for the code's author to convey to a human reader important information about the code. The meaning, purpose, or design are often documented in this way. Comments are written by a human for a human and are skipped over by the Python interpreter. The following figure shows our example code with comments added.
 
 
-.. figure:: Python-Anatomy-Comments.png
-    :align:  center
+.. figure:: /Images/Python-Anatomy-Comments.png
+   :align:  center
 
     Commenting Python Code
 

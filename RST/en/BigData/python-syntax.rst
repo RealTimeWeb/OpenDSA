@@ -18,14 +18,17 @@ To be literate in any language you need to know the language's syntax, the rules
 
 You can check the syntax of your code using the IDLE editor. To illustrate syntax checking a syntax error has been deliberately introduced into the code of one of the examples as shown in the following figure. The syntax error is in the line that now reads *def convert()* and should read *def convert():*. Note that the colon (":") is missing in the incorrect version shown in the figure. The absence of the colon at the end of this line is a syntax mistake. To check the syntax of the code select from the *Run* menu the *Check Module* entry as shown in the figure. If there are no syntax errors the editor makes no visible actions (its silence is consent that the code is syntactically correct).
 
-.. figure:: ../Images/Python-IDLE-Syntax-Checking.png
+.. Comment figure:: //Users/Jason/Dropbox/Projects/PyCharmProjects/OpenDSA/RST/Images/Python-IDLE-Syntax-Checking.png
+.. Comment :align: center
+
+.. figure:: /Images/Python-IDLE-Syntax-Checking.png
    :align: center
 
    Checking the Syntax of Your Code
 
 The IDLE reports syntax errors as shown in the following figure. When a syntax error is discovered two visible actions occur. First, a *SyntaxError* window pop-up containing the phrase *invalid syntax*. Second, the place in the editor window where the error is detected is highlighted as shown in the figure: the empty space at the end of the line containing the error is changed to a bright color. To fix the problem you need to dismiss the pop-up window by clicking its *OK* button and then editing the code itself to correct the syntax.
 
-.. figure:: ../../Images/Python-IDLE-Syntax-Errors.png
+.. figure:: /Images/Python-IDLE-Syntax-Errors.png
    :align: center
 
    Reporting Syntax Errors
@@ -230,7 +233,7 @@ The indentation of code that was described earlier is a vital part of the Python
 
 In the first example we simply want to decide if a given temperature is classified as "Hot". The flowchart form of the logic that is needed is shown in the following figure.
 
-..  figure:: RST/Images/Python-If-Then-Flowchart.png
+..  figure:: /Images/Python-If-Then-Flowchart.png
     :align:  center
 
     The Flowchart for Classifying "Hot" Temperatures
@@ -257,7 +260,7 @@ There are three things to notice about the syntax of this code. They are:
 
 In the second example we want to decide if a given temperature is either "Hot" or "Frigid". The flowchart form of the logic that is needed is shown in the following figure.
 
-..  figure:: RST/Images/Python-If-Then-Else-Flowchart.png
+..  figure:: /Images/Python-If-Then-Else-Flowchart.png
     :align:  center
 
     The Flowchart for Classifying "Hot" and "Frigid" Temperatures
@@ -290,7 +293,7 @@ The important things to notice about the syntax of this example are:
 
 In the third example we want to decide if a given temperature is either "Hot", "Warm", "Cool" or "Other". The flowchart form of the logic that is needed is shown in the following figure.
 
-..  figure:: RST/Images/Python-If-Else-If-Flowchart.png
+..  figure:: /Images/Python-If-Else-If-Flowchart.png
     :align:  center
 
     The Flowchart for Classifying "Hot", "Warm", "Cool" and "Other" Temperatures
@@ -825,7 +828,7 @@ The output from the *keys* function indicates that the *dict_keys* (that is, the
 We can now being to build a map of the data structure. One way to draw this map is shown in the following figure.
 
 
-..  figure:: RST/Images/Python-Type-Map-1.png
+..  figure:: /Images/Python-Type-Map-1.png
     :align:  center
 
     Mapping A Data Stream (Steps 1-4)
@@ -855,7 +858,7 @@ The *type* call (Step 5) tells us that the value associated with the *'earthquak
 
 We can expand our map of the data stream using this new information. The expanded map is shown in the following figure.
 
-..  figure:: RST/Images/Python-Type-Map-2.png
+..  figure:: /Images/Python-Type-Map-2.png
     :align:  center
 
     Mapping A Data Stream (Steps 5-8)
@@ -884,7 +887,7 @@ The *'location'* element is itself a dictionary (Step 9) with three keys (Step 1
 
 The expanded map of the data stream including this information is shown in the following figure.
 
-..  figure:: RST/Images/Python-Type-Map-3.png
+..  figure:: /Images/Python-Type-Map-3.png
     :align:  center
 
     Mapping A Data Stream (Steps 9-12)

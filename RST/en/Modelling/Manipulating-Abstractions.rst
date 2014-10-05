@@ -1,9 +1,9 @@
 Manipulating Abstractions
 =========================
 
-We have seen how to form abstractions that represent objects in the real world by identifying their important properties. We have also seen that these abstractions can be "coded" in a programming language so that they can be communicated by a programmer to a computer. We now want to see how these abstractions can be manipulated. That is, we want to take our first look at the "coding" in a programming language that allows us to make our abstractions change in ways that we want. For our simple ecological model we will see the coding that creates the simulation of the turtles and grassy patches. 
+We have seen how to form abstractions that represent objects in the real world by identifying their important properties. We have also seen that these abstractions can be "coded" in a programming language so that they can be communicated by a programmer to a computer. We now want to see how these abstractions can be manipulated. That is, we want to take our first look at the "coding" in a programming language that allows us to make our abstractions change in ways that we want. For our simple ecological model we will see the coding that creates the simulation of the turtles and grassy patches.
 
-The term "algorithms" refers to a precisely defined procedure for accomplishing some goal. We are interested in "computer algorithms", that is, procedures that precisely direct a computer to accomplish some goal. While the term "computer algorithm" is more descriptive we will simply use the shorter term "algorithm", knowing that what we have in mind are algorithms for computers to follow. 
+The term "algorithms" refers to a precisely defined procedure for accomplishing some goal. We are interested in "computer algorithms", that is, procedures that precisely direct a computer to accomplish some goal. While the term "computer algorithm" is more descriptive we will simply use the shorter term "algorithm", knowing that what we have in mind are algorithms for computers to follow.
 
 As we will gradually see, computer algorithms are constructed out of four simple and basic abilities:
 
@@ -12,16 +12,16 @@ As we will gradually see, computer algorithms are constructed out of four simple
 * decision - the ability to take alternative courses of action
 * iteration - the ability to do some action over and over and over,...
 
-Computers are designed to have these abilities and are able to perform them very rapidly. 
+Computers are designed to have these abilities and are able to perform them very rapidly.
 
-The creativity of programming is using these simple building blocks to create computing systems that play music, search the web, create virtual realities, fly planes, trade stocks, and many other things you can imagine (and maybe even some you cannot imagine). As we will learn by experience, exercising this creativity is challenging because the computer algorithm must be precise. This means, that it must be correct under all possible conditions. Discovering all of the possible conditions and handling them correctly is not easy but it can be learned. 
+The creativity of programming is using these simple building blocks to create computing systems that play music, search the web, create virtual realities, fly planes, trade stocks, and many other things you can imagine (and maybe even some you cannot imagine). As we will learn by experience, exercising this creativity is challenging because the computer algorithm must be precise. This means, that it must be correct under all possible conditions. Discovering all of the possible conditions and handling them correctly is not easy but it can be learned.
 
 Algorithms for computers to follow are written in a programming language. We have seen already that programming languages can express the properties of abstractions. Specifically, we saw how the properties of agents and the global properties of a simulation were expressed in the NetLogo programming language. We will now see how algorithms can be expressed in the NetLogo programming language. As noted several times, keep in mind that NetLogo is only one of many programming languages. Later we will see two other languages in which algorithms can be written.
 
 Calculation
 -----------
 
-Calculation is the easiest of the basic parts of an algorithm to understand. The ability of a computer to do arithmetic is the same as any human's ability except that the computer is faster and does not make mistakes. Computers are great at working with numbers. Programming languages include a full array of arithmetic operations: +, -, \*, / along with parenthesis to group expressions together. 
+Calculation is the easiest of the basic parts of an algorithm to understand. The ability of a computer to do arithmetic is the same as any human's ability except that the computer is faster and does not make mistakes. Computers are great at working with numbers. Programming languages include a full array of arithmetic operations: +, -, \*, / along with parenthesis to group expressions together.
 
 
 All calculation involves three elements: the generation of a mathematical result, the property whose value is set to that result, and some language symbol that identifies this as a calculation statement. In NetLogo calculation statements have the general form:
@@ -36,15 +36,15 @@ In NetLogo "set" is a keyword that identifies that this statement is a calculati
 
 Perhaps the simplest form of calculation is an initialization. In this case a property is set to some predetermined value. Often the value is simply a constant. An example of an initialization in our simple ecological model is:
 
-.. code:: 
- 
+.. code::
+
    set age 0
 
 
 which is a calculation to set the age property of a turtle to zero. This statement is performed as part of the model's setup operations. The goal is to make sure that all turtles start out as "young" turtles. Similarly, the initialization
 
-.. code:: 
- 
+.. code::
+
    set energy 2
 
 sets the energy property of a turtle to a simple constant.
@@ -52,40 +52,40 @@ sets the energy property of a turtle to a simple constant.
 
 Another recurring kind of calculation is an update. The idea of an update is seen in real world situations. When you pay for a purchase using your debit card the card's balance is updated by subtracting the amount of the purchase from the debit card's current (before the purchase) balance with the result becoming the new (after the purchase) balance. When a turtle in our simple ecological model moves the turtle expends a unit of energy. Thus, the energy property of the turtle has to be updated. We can see this update in the NetLogo code as:
 
-.. code:: 
- 
+.. code::
+
    set energy energy - 1
 
 This statement sets the energy property of a turtle to be an amount equal to one unit less than its previous value. More mechanically, the current value of the energy property is obtained, one is subtracted from this value and the result becomes the new value for the energy property. In the same way, the turtle ages and so its age property must be updated by increasing the value of the property by 1 time unit. The NetLogo code for this is:
 
-.. code:: 
- 
+.. code::
+
     set age age + 1
 
-This statement sets the age property of a turtle to be an amount equal to one unit more than its previous value. More mechanically, the current value of the age property is obtained, one is added to this value, and the result becomes the new value for the age property. 
+This statement sets the age property of a turtle to be an amount equal to one unit more than its previous value. More mechanically, the current value of the age property is obtained, one is added to this value, and the result becomes the new value for the age property.
 
 
 Calculations can be more complicated mathematically. The  model named GasLab Free Gas (in the NetLogo Models Library in the Chemistry & Physics section) has these calculations:
 
-.. code:: 
- 
+.. code::
+
    set energy (0.5 * mass * (speed ^ 2))
    set heading (theta - (atan v2l v2t))
 
-While they are more involved they still follow the same form. 
+While they are more involved they still follow the same form.
 
 
 In some cases a calculation is complicated enough that it is broken down into pieces. The same GasLab Free Gas model has this code:
 
-.. code:: 
- 
+.. code::
+
 
   let vcm (((mass * v1t) + (mass2 * v2t)) / (mass + mass2) )
   ...
   set v1t (2 * vcm - v1t)
   set v2t (2 * vcm - v2t)
 
-The first statement, beginning with the keyword "let", computes a temporary result as the value of "vcm" which is then used in the each of the next two calculation statements. 
+The first statement, beginning with the keyword "let", computes a temporary result as the value of "vcm" which is then used in the each of the next two calculation statements.
 
 Sequence
 --------
@@ -95,29 +95,29 @@ Arranging things in the right order is important. Sayings like "putting the cart
 
 
 
-.. figure:: Cart-Before-Horse.png
+.. figure:: /Images/Cart-Before-Horse.png
    :align: center
 
    The Importance of Order
 
 
 
-Ordering the steps in a program is equally important. A simple example of this is the code shown immediately above. In this code a value for *vcm* is calculated and then this value is used in the calculation of the values for *v1t* and *v2t*. Reordering the steps in this code so that the calculation of *vcm* comes after the the steps that calculate v1t and v2t is clearly wrong. 
+Ordering the steps in a program is equally important. A simple example of this is the code shown immediately above. In this code a value for *vcm* is calculated and then this value is used in the calculation of the values for *v1t* and *v2t*. Reordering the steps in this code so that the calculation of *vcm* comes after the the steps that calculate v1t and v2t is clearly wrong.
 
-Computers are designed to follow the order of steps given in the code they are executing. Unless the code says otherwise a computer will simply fetch the next line, execute that line of code, fetch the next line of code, and so on. 
+Computers are designed to follow the order of steps given in the code they are executing. Unless the code says otherwise a computer will simply fetch the next line, execute that line of code, fetch the next line of code, and so on.
 
 
 Decisions
 ---------
 
-For programs to be able to cope with even simple problems they usually have to be able to take alternative courses of action. That is, the program must adapt its behavior to changing circumstances. People adapt their behavior to changing circumstances all the time. Consider the image below of a traffic sign. This sign tells drives how to adapt their behavior to conform with legal driving conditions. One way to state what the sign says is that "if the light is flashing then the speed limit is 15 miles per hour." This form of "if...then..." expression is exactly what the designers of programming languages used to give the code that we write the ability to adapt to changing circumstances. 
- 
+For programs to be able to cope with even simple problems they usually have to be able to take alternative courses of action. That is, the program must adapt its behavior to changing circumstances. People adapt their behavior to changing circumstances all the time. Consider the image below of a traffic sign. This sign tells drives how to adapt their behavior to conform with legal driving conditions. One way to state what the sign says is that "if the light is flashing then the speed limit is 15 miles per hour." This form of "if...then..." expression is exactly what the designers of programming languages used to give the code that we write the ability to adapt to changing circumstances.
 
-.. figure:: School-Sign-Simple-Decision.png
+
+.. figure:: /Images/School-Sign-Simple-Decision.png
    :align:  center
 
    A Traffic Control Sign
-   
+
 
 .. image:: School-Sign-Simple-Decision.png
    :align:  center
@@ -125,8 +125,8 @@ For programs to be able to cope with even simple problems they usually have to b
 
 Similarly, the agents in the simple ecological model have rules that are cause the agents to change behavior depending on circumstances. These rules are also cast in a "if... then..." framework. One of the rules for a turtle in the simple ecological model is that it can only reproduce if its energy is above a given threshold. This is code in NetLogo as follows:
 
-.. code:: 
- 
+.. code::
+
    if energy > birth-energy [
       set number-turtles number-turtles + 1
       set energy energy - birth-energy
@@ -138,8 +138,8 @@ This code directs the turtle to check a certain condition, namely whether its en
 
 In general, a decision in NetLogo is of the form:
 
-.. code:: 
- 
+.. code::
+
 
    if condition [
       list of actions
@@ -158,7 +158,7 @@ Life can be complicated and so can the conditions that we need to test for. The 
 We would certainly understand from this sign that at 9AM on Tuesday the speed limit would be 40 MPH but that this would not be the limit if it were 9AM on a Saturday. Similarly, the speed limit would be 40 MPH at 3PM on Friday but that this would not be the limit if it were 3PM on a Sunday.
 
 
-.. figure:: School-Sign-Complex-Decision.png
+.. figure:: /Images/School-Sign-Complex-Decision.png
    :align: center
 
    A More Complex Traffic Control Sign
@@ -169,16 +169,16 @@ There are different ways of expressing the decision logic for this sign in the "
 
 One way is to begin coding the school sign logic is like this:
 
-.. code:: 
- 
+.. code::
+
    if day = school-day [
       ; other parts of decision here
    ]
 
 This first step separates the decision into whether the current day is or is not a school day. If the condition is not true (i.e., the day is not a school day) then the sign does not apply and we can skip the rule. If, however, the current day is a school day we still need to apply the logic about the time of day. Lets first deal with the morning hours. We can account for this in our logic like this:
 
-.. code:: 
- 
+.. code::
+
    if day = school-day [
       if time in 8-9:30AM [
          set speed-limit 40
@@ -190,8 +190,8 @@ This first step separates the decision into whether the current day is or is not
 This step has refined the decision logic by adding the condition that the speed limit is 40 during the restricted morning hours (8-9:30AM). It is very important to notice the dependency created by this structure. Namely, the condition for the time being in the restricted morning hours is only tested if the current day is a school day. However, our rule is still incomplete because it does not handle the case for the restricted afternoon hours. We can add this condition like this:
 
 
-.. code:: 
- 
+.. code::
+
 
    if day = school-day [
 
@@ -202,30 +202,30 @@ This step has refined the decision logic by adding the condition that the speed 
       if time in 2:30-4PM [
          set speed-limit 40
       ]
-   
-   ] 
+
+   ]
 
 
-This step has completed the logic of the sign by accounting for the lower speed limit during the restricted afternoon hours. 
+This step has completed the logic of the sign by accounting for the lower speed limit during the restricted afternoon hours.
 
-While the completed sign logic is correct, one aspect of it deserves a closer look. Notice that the two if statements that test the time of day are separate statements that will be executed in sequence (see discussion of sequence above). We can follow the execution of the code by using a visualization of the execution shown in the following figure. 
+While the completed sign logic is correct, one aspect of it deserves a closer look. Notice that the two if statements that test the time of day are separate statements that will be executed in sequence (see discussion of sequence above). We can follow the execution of the code by using a visualization of the execution shown in the following figure.
 
 
-..  figure:: If-Statement-Flow-Chart.png
+..  figure:: /Images/If-Statement-Flow-Chart.png
     :align: center
 
     Flow Chart of an If-Then Statement
 
 
-In this figure the steps in the two separate decision statements are surrounded by dashed boxes to emphasize that they are two separate statements. The execution of the statements is shown by the arrowed lines. The execution starts at the top of the figure. The first condition is tested and if found to be true the execution proceeds to the right (indicated by the word true over the arrowed lined going to the right) otherwise the execution proceeds immediately to the next statement (following the arrowed lines labelled false). If the execution proceeds to the right it executes the set statement (setting the speed-limit to 40) and then also proceeds to the next statement. The second if statement is similarly executed. What is to be seen here is that the second test is always made regardless of whether the first test was true or not. 
+In this figure the steps in the two separate decision statements are surrounded by dashed boxes to emphasize that they are two separate statements. The execution of the statements is shown by the arrowed lines. The execution starts at the top of the figure. The first condition is tested and if found to be true the execution proceeds to the right (indicated by the word true over the arrowed lined going to the right) otherwise the execution proceeds immediately to the next statement (following the arrowed lines labelled false). If the execution proceeds to the right it executes the set statement (setting the speed-limit to 40) and then also proceeds to the next statement. The second if statement is similarly executed. What is to be seen here is that the second test is always made regardless of whether the first test was true or not.
 
 In our complete sign logic the test for the time of day being in the afternoon is made even if the test for the time being in the morning is true. This "unnecessary" testing is harmless though possibly annoying. It is harmless because if the time is in the morning the second test will simply not be true and the execution will proceed. This situation might be annoying because we are making a test even though we know it will be false. We can structure the decision logic somewhat differently if we want.
 
 One way to restructure the decision logic is to use an alternative expression of the form "if ... then ... else ..." which provides that the "then" part is executed only when the condition tested  is true and the "else" part is executed only when the condition tested is not true. In NetLogo a statement like this appears as:
 
-.. code:: 
- 
-   ifelse condition 
+.. code::
+
+   ifelse condition
      [ list of "then" actions ]
      [ list of "else" actions ]
 
@@ -233,7 +233,7 @@ One way to restructure the decision logic is to use an alternative expression of
 The keyword "ifelse" and the square brackets are part of the NetLogo syntax. Remember that the square brackets have to be matched. The execution of this statement is illustrated by the following visualization similar to the one above.
 
 
-..  figure:: IfElse-Statement-Flow-Chart.png
+..  figure:: /Images/IfElse-Statement-Flow-Chart.png
     :align: center
 
     Flowchart of an If-Then-Else Statement
@@ -243,26 +243,26 @@ This visualization shows that there is a strict choice being made between two al
 
 We can make use of this form of expression in structuring our sign logic. We want to be sure that the test for the afternoon restricted times are only made when the test for the morning restricted time is not true. That is, the afternoon time test should be the "else" part of the morning time test. The NetLogo style code for this is as follows:
 
-.. code:: 
- 
+.. code::
+
 
    if day = school-day [
 
-      ifelse time in 8-9:30AM 
+      ifelse time in 8-9:30AM
 
         [ set speed-limit 40 ]      ; "then" actions
 
         [ if time in 2:30-4PM       ; "else" actions
-            [ set speed-limit 40 ]  
+            [ set speed-limit 40 ]
         ]
    ]
-  
-   
-It may help to look at the visualization for this code. 
+
+
+It may help to look at the visualization for this code.
 
 
 
-..  figure:: IfElse-Example-Flow-Chart.png
+..  figure:: /Images/IfElse-Example-Flow-Chart.png
     :align: center
 
     Flowchart of If-Then-Else Code
@@ -272,18 +272,18 @@ In this visualization a dotted box is used to outline the "else" actions. Follow
 
 There is a second way to restructure our traffic sign logic relies on the way which we might explain the sign's meaning to someone else. It would be natural to say something like "the speed limit is reduced on school days between 8-9:30AM or between 2:30-4PM". In this case a form of ... or ..." expression is being used. The meaning of this expression is that the condition is true if one or the other of the conditions is true. This corresponds well with the formal logical notion of "or" as well. A NetLogo style version of our sign logic can be written this way:
 
-.. code:: 
- 
+.. code::
+
    if day = school-day [
 
       if time in 8-9:30AM  or  time in 2:30-4PM
 
-        [ set speed-limit 40 ]     
+        [ set speed-limit 40 ]
 
    ]
 
 
-In this version of our sign logic there is only one test for time of day which uses the "or" form of expression. 
+In this version of our sign logic there is only one test for time of day which uses the "or" form of expression.
 
 We have now seen three correct but different coding for the sign logic. This means that different programmers may come up with different ways to write a program that solves the same problem. This is part of the creativity of programming.
 
@@ -295,14 +295,14 @@ Iteration
 
 Repeating the same action over and over is a common occurrence in nature and in machines that people have built. For each of us the repetitive beating of our hearts and the repetitive breathing of our lungs is critical to life. The repetitive movement of pistons in steam and internal combustion engines gives the power to these sources of mechanical energy. The ability to perform the same set of steps over and over is important in most uses of computers. In programming languages the term "iteration" is often used to describe coding that produces repeated execution of some steps in the program.
 
-..  figure:: NetLogo-Iteration-Sign.png
+..  figure:: /Images/NetLogo-Iteration-Sign.png
     :align: center
 
-    Caution: Iteration Ahead    
+    Caution: Iteration Ahead
 
 
 
-Iteration is not mindless repetition of exactly the same thing. For example, calculating "2 + 2" over and over is not really meaningful. What makes iteration powerful is that the same steps are executed over and over but, on each repetition, the steps are performed on different data. 
+Iteration is not mindless repetition of exactly the same thing. For example, calculating "2 + 2" over and over is not really meaningful. What makes iteration powerful is that the same steps are executed over and over but, on each repetition, the steps are performed on different data.
 
 
 
@@ -324,10 +324,10 @@ A common form for expressing iteration in a programming language uses the idea o
 
 .. code::
 
-   
-   foreach t in turtles [ turtle-actions ]  
 
-   
+   foreach t in turtles [ turtle-actions ]
+
+
    foreach q in earthquakes [ quake-actions ]
 
 
@@ -369,7 +369,7 @@ The sense of this terminology is that the program is "asking" the turtles (one a
 
        set age age + 1
 
-   ]    
+   ]
 
 
 
@@ -411,6 +411,6 @@ In this code each patch is selected one at a time. The currently selected patch 
 
 
 
-There are other ways of expressing iteration. These are briefly described here. Some of these forms may be encountered later as we see different programming languages in this course and you may see these form if you learn other programming languages outside of this course. One alternative form of iteration "counting" iteration. This means that the iteration is repeated a fixed number of times over some range of numbers. Counting iteration might specify for example that the steps are repeated over the range 1 to 10, or 0 to 99. A second alternative for of iteration is "condition" iteration. This means that the iteration is repeated until a given condition is false. For example, in our simple ecological model we might want to stop the simulation if all of the turtles die. Expressing this as condition iteration yields something like "while number-turtles > 0 [ simulation-steps ]". This means that as long as the value of the global property number-turtles is greater than 0 the simulation steps would continue to be executed. Each of these forms of iteration is useful in different contexts depending on the nature of the iteration. 
+There are other ways of expressing iteration. These are briefly described here. Some of these forms may be encountered later as we see different programming languages in this course and you may see these form if you learn other programming languages outside of this course. One alternative form of iteration "counting" iteration. This means that the iteration is repeated a fixed number of times over some range of numbers. Counting iteration might specify for example that the steps are repeated over the range 1 to 10, or 0 to 99. A second alternative for of iteration is "condition" iteration. This means that the iteration is repeated until a given condition is false. For example, in our simple ecological model we might want to stop the simulation if all of the turtles die. Expressing this as condition iteration yields something like "while number-turtles > 0 [ simulation-steps ]". This means that as long as the value of the global property number-turtles is greater than 0 the simulation steps would continue to be executed. Each of these forms of iteration is useful in different contexts depending on the nature of the iteration.
 
 

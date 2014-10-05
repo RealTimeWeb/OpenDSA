@@ -29,7 +29,7 @@ Calculation
 
 To see how Blockly can be used to construct simple calculations we will use the simple plane seat calculator problem that is shown in the figure below. At the top of the figure you will that we are currently working on the first of three levels of this problem. The goal is to build a Blockly program that calculates the number of  seats on the aircraft shown in the figure. The slider just below the plane's fuselage is a control that allows for additional rows of seats be added to the plane. In the figure the slider is set for 5 rows. As can be seen, each row has four seats. This is a trivial problem but is useful to illustrate the mechanics of putting Blockly blocks together to make a simple program - in this case a program that does a simple calculation.
 
-..  figure::  Blockly-Plane-Seat-Calculator-Problem.png
+..  figure::  /Images/Blockly-Plane-Seat-Calculator-Problem.png
     :align:   center
 
     The Blockly Plane Seat Calculator Problem
@@ -40,7 +40,7 @@ To see how Blockly can be used to construct simple calculations we will use the 
 
 The Blockly programming environment for this problem is shown in the next figure. The palette of available blocks is shown in the gray area on the left. The work area is to the right. Currently in the work area is a block named "seats =". Our goal is to use the blocks from the palette to create a calculation that correctly determines the number of seats on the airplane.
 
-..  figure::  Blockly-Plane-Seat-Work-Space.png
+..  figure::  /Images/Blockly-Plane-Seat-Work-Space.png
     :align:   center
 
     The Blockly Plane Seat Work Space
@@ -66,7 +66,7 @@ To form a calculation, blocks from the palette are copied into the work space an
 
 
 
-..  figure:: Blockly-Plane-Seat-Level1-Steps.png
+..  figure:: /Images/Blockly-Plane-Seat-Level1-Steps.png
     :align: center
 
     The Steps to Create the Level 1 Calculation
@@ -113,7 +113,7 @@ Sequence
 An example of moving through a maze is used to illustrate how Blockly can represent a sequence of actions. The first level of the maze problem is shown in the figure below. On the left is the maze. The maze contains an avatar and a highlighted path from the starting point of the avatar to a goal. The intention, of course, is to devise a Blockly program that will move the avatar along the path to the goal. On this level there are three blocks in the palette: a "move forward" block that causes the avatar in the maze to move forward one step in the direction it is facing, and two "turn" blocks that are intially set to turn the avatar to the left or right. Once our program has been assembled we can test whether it works by pressing the "Run Program" button.
 
 
-.. figure:: Blockly-Maze-Level1.png
+.. figure:: /Images/Blockly-Maze-Level1.png
    :align:  center
 
    The Blockly Maze (Level 1)
@@ -131,7 +131,7 @@ Iteration
 
 Remember that iteration gives the programmer the power to cause an action to repeated over and over. On each iteration something has changed so that the repetition is not mindlessly the same. In the maze examples level 3 introduces the use of iteration. The figure below show the Blockly maze at level 3.
 
-.. figure:: Blockly-Maze-Level3.png
+.. figure:: /Images/Blockly-Maze-Level3.png
    :align: center
 
    The Blockly Maze (level 3)
@@ -158,7 +158,7 @@ The mazes seen so far have been relatively simple in that navigating the avatar 
 The sixth maze level is complicated enough that it cannot reasonably be solved without decisions. This maze is shown in the figure below. As you cna see, this is a "left turn only" maze. There are, of course, many such possible mazes. The level 6 maze requires decisions because the avatar will need to make four left hand turns to reach the goal. However, the distance between these turns is different in each case. So, we cannot simply rely on repetition to guide the avatar. We could, of course, simply arrange a sequence of "move" and "turn" blocks that works for this specific maze. But this is not an interesting solution because it will not work on any other maze. It is also not realistic because, in practice, we want to be able to write programs that work for all cases - not just a single case.
 
 
-.. figure:: Blockly-Maze-Level6.png
+.. figure:: /Images/Blockly-Maze-Level6.png
    :align:  center
 
    The Blockly Maze (level 6)
@@ -173,7 +173,7 @@ One way to think about the logic for the avatar is that the avatar acts accordin
 
 Notice that we do need a third rule for checking if the path is to the right because this is a left turn onlymaze. The avatar repeatedly applies these two rules until it reaches the goal. We can program this logic in Blockly as shown in the next figure.
 
-.. figure:: Blockly-Maze-Level6-Solution1.png
+.. figure:: /Images/Blockly-Maze-Level6-Solution1.png
    :align: center
 
    First Solution for Maze (Level 6)
@@ -196,7 +196,7 @@ A different way to think about the logic for the avatar is that the avatar acts 
 The avatar repeatedly applies these two rules until it reaches the goal. This logic for the avatar can be programmed in Blockly as shown in the next figure. We can argue that this version of the code for the avataris correct. At each step the next location ahead of the avatar is either straight or a corner. If the next location is straight then the avatar moves ahead and does not turn. If the next location is a corner then the avatar moves to corner and turns. Again, these are the only two cases and the avatar acts correctly in each.
 
 
-.. figure:: Blockly-Maze-Level6-Solution2.png
+.. figure:: /Images/Blockly-Maze-Level6-Solution2.png
    :align: center
 
    Second Solution for Maze (Level 6)
@@ -214,7 +214,7 @@ Exercise: Do level 8 of the maze
 
 In more complicated mazes the avatar's programming relies on logic where the avatar needs to do one or other of two things. This kind of logic is needed for the maze presented in level 9 that is shown in the figure below. Notice that a new block has been added, an "if do else" block. The meaning of this block is that the condition is tested and is either true or false. If the condition is true the blocks in the "do" gap are performed. If the condition is false the blocks in the "else" gap are performed. In no case are the blocks in both gaps performed.
 
-.. figure:: Blockly-Maze-Level9.png
+.. figure:: /Images/Blockly-Maze-Level9.png
    :align:  center
 
    The Blockly Maze (level 9)
@@ -225,7 +225,7 @@ A general strategy for maze walking is to keep the same hand on the wall at all 
 A solution for the level 9 maze using a "right hand" strategy is shown in the next figure.
 
 
-.. figure:: Blockly-Maze-Level9-Solution.png
+.. figure:: /Images/Blockly-Maze-Level9-Solution.png
    :align: center
 
    Second Solution for Maze (Level 9)

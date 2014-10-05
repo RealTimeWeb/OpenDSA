@@ -42,7 +42,7 @@ Computational "thinking" is a mode of thought that can only be developed in para
 
 While there are three different languages, each language has the *same* underlying set of concepts. In each language we will focus on how :term:`abstractions <abstraction>` are captured and manipulated by an :term:`algorithm` written in that language. The core language elements are: calculation, sequence, decision, iteration, and functions.
 
-..  figure:: Introduction-Multiple-Languages.png
+..  figure:: /Images/Introduction-Multiple-Languages.png
     :align:  center
 
     Same Idea -- Different Languages
@@ -75,14 +75,14 @@ The rise of "big data" applications is driven by the need to use the mountains o
 
 * **Variety**: The data contains many different kinds of data elements in different formats and in different organizations. A patient medical record is of this kind: it may have personal contact information in text, x-ray images, coded medical tests that were performed, prescription information, etc.
 
-..  figure:: Introduction-Big-Data.png
+..  figure:: /Images/Introduction-Big-Data.png
     :align:  center
 
     The Dimensions of Big Data
 
 In this course we will use "big data" for the major course project. You will be able to select, from a gallery of big data streams, one data stream that is relevant to your major. You will use this data stream to answer some interesting questions in your field of study.
 
-.. figure:: how-big-terabyte.jpg
+.. figure:: /Images/how-big-terabyte.jpg
     :align: center
 
     Linda Lawrey, `"What does 1 Terabyte of storage really mean." <https://plus.google.com/+LindaLawrey/posts/af4hGvdfdMu>`_ , June 1, 2012

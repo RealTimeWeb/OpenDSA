@@ -109,55 +109,7 @@ The work space that follows shows the program needed to convert the temperature 
    :submission:
 
    preload::
-   <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="variables_set" inline="false" x="-7" y="24">
-    <title name="VAR">ftemp</title>
-    <value name="VALUE">
-      <block type="weather_get_temperature">
-        <title name="CITY">BLACKSBURG</title>
-      </block>
-    </value>
-    <next>
-      <block type="variables_set" inline="false">
-        <title name="VAR">ctemp</title>
-        <value name="VALUE">
-          <block type="math_arithmetic" inline="true">
-            <title name="OP">DIVIDE</title>
-            <value name="A">
-              <block type="math_arithmetic" inline="true">
-                <title name="OP">MINUS</title>
-                <value name="A">
-                  <block type="variables_get">
-                    <title name="VAR">ftemp</title>
-                  </block>
-                </value>
-                <value name="B">
-                  <block type="math_number">
-                    <title name="NUM">32</title>
-                  </block>
-                </value>
-              </block>
-            </value>
-            <value name="B">
-              <block type="math_number">
-                <title name="NUM">1.8</title>
-              </block>
-            </value>
-          </block>
-        </value>
-        <next>
-          <block type="text_print" inline="false">
-            <value name="TEXT">
-              <block type="variables_get">
-                <title name="VAR">ctemp</title>
-              </block>
-            </value>
-          </block>
-        </next>
-      </block>
-    </next>
-   </block>
-   </xml>
+
 
 The code in the work space makes use of a sequence of operations:
 
@@ -167,7 +119,7 @@ The code in the work space makes use of a sequence of operations:
 
 The assembly of the blocks often involves multiple steps. Here is a diagram that shows the way in which the blocks for the Fahrenheit to Celsius conversion can be assembled. The arrows shows how the blocks are snapped together. There is no strict ordering of which blocks are assembled first.
 
-.. figure:: Blockly-Fahrenheit-Celsius-Conversion.png
+.. figure:: /Images/Blockly-Fahrenheit-Celsius-Conversion.png
    :align:  center
 
    Assembling the Blocks for the Temperature Conversion Example

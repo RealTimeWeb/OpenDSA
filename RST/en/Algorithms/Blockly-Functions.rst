@@ -63,7 +63,7 @@ It is important to understand the specific way in which the code using a program
 The figure below shows this sequence of events graphically. The arrows represent the "flow of control" between the upper section of code and the function. When the call block is executed the "flow of control" causes the function to begin execution. When the function has completed its execution the "flow of control" returns and the statement immediately after the call block executes.
 
 
-..  figure::  Blockly-Function-Call-Return.png
+..  figure::  /Images/Blockly-Function-Call-Return.png
     :align:   center
 
     Calling and Returning from a Function
@@ -141,7 +141,7 @@ The important point is that the *convert* function with a parameter is now much 
 Creating the function definition and call blocks for functions with parameters requires some explanation. Notice that the *to do something* function definition block as an icon of a star on a blue background in the left corner. When clicked this icon presents a display for adding parameters to the call. The top part of the following figure shows this display. The left side of the display contains a *input name x* block that denotes a generic parameter with the name *x*. The right part of the display contains an *inputs* block with a slot into which the parameter can be plugged and renamed.  The bottom part of the following figure shows that the generic parameter block can be dragged and inserted into the *inputs* slot and the generic name *x* can be changed. In this case the parameter name was changed to *TheStream*. The name of the function was also changed from *do something* to *convert*. To complete the function definition just click on the star icon again to close the display.
 
 
-.. figure:: Blockly-Functions-Parameter-Definition.png
+.. figure:: /Images/Blockly-Functions-Parameter-Definition.png
    :align:  center
 
    Adding Parameters to a Function Definition

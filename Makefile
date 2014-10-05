@@ -58,7 +58,7 @@ min: nomin
 OpenDSA: min
 	python $(CONFIG_SCRIPT) config/OpenDSA.json
 
-CompThink: min
+CompThink CT ct: min
 	python $(CONFIG_SCRIPT) config/CompThink.json
 
 nomin:

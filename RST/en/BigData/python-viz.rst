@@ -234,7 +234,7 @@ After the visualization has been constructed it can be displayed in a separate w
 
 The visualization produced by the line graph code is shown below.
 
-.. figure:: Python-Viz-Line-Graph.png
+.. figure:: /Images/Python-Viz-Line-Graph.png
    :align: center
 
    The Line Graph Visualization
@@ -297,7 +297,7 @@ Much of the code in the histogram was described in the earlier example. What is 
 
 The histogram produced by the example program is shown next.
 
-.. figure:: Python-Viz-Histogram.png
+.. figure:: /Images/Python-Viz-Histogram.png
    :align: center
 
    The Histogram Visualization
@@ -368,14 +368,14 @@ Most of the code in the scatter plot example should be familiar from the earlier
 The scatter plot visualization produced by the example program is shown below. It is clear from this visualization that there are definite clusters in the data. This means that the earthquakes described in our sample daa appear to have a tendency to occur in some places more than other.
 
 
-.. figure:: Python-Viz-Scatter-Plot.png
+.. figure:: /Images/Python-Viz-Scatter-Plot.png
    :align: center
 
    The Scatter Plot Visualization
 
 If we use the pan-zoom controls on the *matplotlib* display window we can see how localized the clustering of earthquakes is. The following figure shows a close-up view of the cluster of earthquakes in the upper left hand corner.
 
-.. figure:: Python-Viz-Scatter-Plot-Zoom.png
+.. figure:: /Images/Python-Viz-Scatter-Plot-Zoom.png
    :align: center
 
    Englarged view of a cluster in the scatter plot visualization
@@ -395,7 +395,7 @@ A visualization often needs to depict data on some form of geographic map. In ou
 
 Latitude and longitude coordinates identify a point on the spherical globe. Making a 2D visualization of these points is slightly tricky. As an analogy, imagine drawing a dots with a magic marker on an orange. Making a 2D map is like peeling the rind from the orange and laying out the rind pieces flat. How do do this so that points on the surface of the orange are easily recognizable. Sometimes its easier to see the pattern in the points if we "stretch" the rind to form a more uniform surface. But this stretching also distorts the distance between points. Cartographers, people who make maps, have devised a number of different ways to "project" the surface of a 3D spherical globe onto a flat 2D plane. Here is more information on `map projections <http://en.wikipedia.org/wiki/Map_projection>`_ . The example developed below uses a *Hammer* projection, named for Ernst Hammer who developed it in 1892. The Hammer projection looks like this:
 
-..  figure:: Python-Viz-Hammer-Projection.jpg
+..  figure:: /Images/Python-Viz-Hammer-Projection.jpg
    :align: center
 
    The Hammer projection.
@@ -456,7 +456,7 @@ These there steps are marked by comments in the code below. The complete code ca
 
 Notice that the *Basemap* function returns a *map* that encodes the details of how to perform the projection (Step 1). This *map* is used (Step 2) to project its two parameters (the latitude and longitude data) and returns two values (the projected x and y coordinates). These projected coordinates are used as input to the *scatter* plot function (Step 3). To make the visualization easier to understand the *drawcoastlines* functions is used to show the continents. Here is the resulting visualization.
 
-.. figure:: Python-Viz-Map-Plot-Hammer.png
+.. figure:: /Images/Python-Viz-Map-Plot-Hammer.png
    :align: center
 
    Earthquake data plotted on a globe map (Hammer projection)

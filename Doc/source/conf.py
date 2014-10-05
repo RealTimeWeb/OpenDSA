@@ -17,6 +17,19 @@ import sys, os
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
+#
+# with open("temp_file.txt", "w") as f:
+#     f.write(sys.path)
+#     f.flush()
+#
+# print sys.path
+# sys.path.insert(0, os.path.abspath('/Users/Jason/Dropbox/Projects/PyCharmProjects/OpenDSA/RST/Images'))
+# sys.path.insert(0, os.path.abspath('../../RST/Images'))
+# sys.path.insert(0, os.path.abspath('../RST/Images'))
+# sys.path.insert(0, os.path.abspath('../../RST/'))
+# sys.path.insert(0, os.path.abspath('../RST/'))
+# sys.path.insert(0, os.path.abspath('RST/Images'))
+# sys.path.insert(0, os.path.abspath('/RST/Images'))
 
 # -- General configuration -----------------------------------------------------
 
@@ -111,7 +124,7 @@ html_title = "OpenDSA System Documentation"
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo =  "_static/AlgoVizLogo.gif" 
+html_logo =  "_static/AlgoVizLogo.gif"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32

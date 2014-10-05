@@ -269,6 +269,10 @@ def initialize_output_directory(config):
   # Copy _static from RST/ to the book source directory
   distutils.dir_util.copy_tree(config.odsa_dir + 'RST/_static/', config.book_src_dir + '_static', update=1)
 
+  # TODO Add a copy for copy js files to the static folder
+  # Copy _static from RST/ to the book source directory
+  distutils.dir_util.copy_tree(config.odsa_dir + 'RST/ODSAextensions/openct/blockly/js', config.book_src_dir + '_static', update=1)
+
   # Copy config file to _static directory
   distutils.file_util.copy_file(config.config_file_path, config.book_src_dir + '_static/')
 
