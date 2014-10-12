@@ -150,6 +150,13 @@
                 }
             }
         },
+
+        "Dev": {
+            "Dev/Test1.rst": {
+                "long_name": "Graph Implementation",
+                "exercises": {}
+            }
+        },
         "Conclusion": {
             "Conclusion/Summary.rst": {
                 "long_name": "Graph Implementation",
